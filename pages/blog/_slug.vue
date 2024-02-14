@@ -24,16 +24,18 @@
 
     <AuthorComponent :author="article.author" />
 
-    <prev-next :prev="prev" :next="next" />
+    <PrevNext :prev="prev" :next="next" />
     
   </article>
 </template>
 
 <script>
 import AuthorComponent from '../../components/AuthorComponent.vue'
+import PrevNext from '../../components/PrevNext.vue'
+
 
   export default {
-    components: { AuthorComponent },
+    components: { AuthorComponent, PrevNext },
     async asyncData({ $content, params }) {
       const article = await $content('articles', params.slug).fetch()
 

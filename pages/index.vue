@@ -1,11 +1,11 @@
 <template>
   <div>
-    df
+    dfgd
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Index',
+  name: 'Index'
 }
 </script>
