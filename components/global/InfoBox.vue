@@ -4,10 +4,3 @@
   </div>
 </template>
 
-<style lang="scss">
-
-.info-style {
-  color: aqua;
-}
-
-</style>

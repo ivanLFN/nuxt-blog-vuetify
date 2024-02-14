@@ -21,22 +21,41 @@
     <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
 
     <nuxt-content :document="article" />
+
+    <AuthorComponent :author="article.author" />
+
+    <prev-next :prev="prev" :next="next" />
+    
   </article>
 </template>
 
 <script>
+import AuthorComponent from '../../components/AuthorComponent.vue'
+
   export default {
+    components: { AuthorComponent },
     async asyncData({ $content, params }) {
       const article = await $content('articles', params.slug).fetch()
-      return { article }
+
+      const [prev, next] = await $content('articles')
+        .only(['title', 'slug'])
+        .sortBy('createdAt', 'asc')
+        .surround(params.slug)
+        .fetch()
+
+      return {
+        article,
+        prev,
+        next
+      }
     },
     methods: {
-      formatDate(date) {
-        const options = { year: 'numeric', month: 'long', day: 'numeric' }
-        return new Date(date).toLocaleDateString('en', options)
-      }
+        formatDate(date) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(date).toLocaleDateString('en', options);
+        }
     }
-  }
+}
 </script>
 
 <style lang="scss">
