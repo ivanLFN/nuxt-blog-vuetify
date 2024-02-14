@@ -7,6 +7,8 @@ author:
   name: Benjamin
   bio: All about Benjamin
   image: https://images.unsplash.com/.....
+tags: 
+  - cost
 ---
 ## This is a heading
 
