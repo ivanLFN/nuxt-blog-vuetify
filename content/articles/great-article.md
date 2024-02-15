@@ -8,7 +8,7 @@ author:
   bio: All about Maria and where she works and what she does
   img: https://images.unsplash.com/.....
 tags:
-  - web development
+  - web_development
 ---
 ## Hello this article is great
 

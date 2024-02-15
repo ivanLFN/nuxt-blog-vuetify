@@ -9,6 +9,8 @@ author:
   image: https://images.unsplash.com/.....
 tags: 
   - cost
+  - javascript
+  - web_development
 ---
 ## This is a heading
 
